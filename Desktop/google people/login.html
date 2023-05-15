@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<style>
+ .notre-btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #1a3c6e;
+  color: #ffffff;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.notre-btn:hover {
+  background-color: #ffcc00;
+  transform: scale(1.1);
+}
+
+#escudo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  
+}
+
+
+
+
+</style>
+<body>
+  <h1>Professor / Colaborador Utilize Login Google</h1>
+  <button id="myButton" class="notre-btn" onclick="window.location.href='/auth/google'">Entrar com Google</button>
+<div id="escudo" style="display: none;">
+  <img src="escudo.png" alt="Escudo do Colégio Notre Dame" width="100px">
+</div>
+
+  <script>
+  $(document).ready(function() {
+  $('#myButton').hover(function() {
+    $('#escudo').fadeIn();
+  }, function() {
+    $('#escudo').fadeOut();
+  });
+});
+
+
+
+  </script>
+  
+</body>
+
+</html>

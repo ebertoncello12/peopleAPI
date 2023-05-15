@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página do Professor</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    #user-picture {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Seja bem-vindo, Professor <span id="user-name"></span></span>
+    <div>
+      <img src="" alt="Foto do perfil" id="user-picture" width="50" height="50">
+      <a href="/logout" class="btn btn-primary">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="card">
+      <img class="card-img-top rounded-circle mx-auto mt-4" src="" alt="Foto do perfil" id="user-picture" width="100" height="100">
+      <div class="card-body">
+        <h5 class="card-title">Acesso permitido: <span id="user-email"></span></h5>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const userData = JSON.parse('__USER_DATA__');
+    const userEmail = document.getElementById('user-email');
+    const userName = document.getElementById('user-name');
+    const userPictureNav = document.getElementById('user-picture');
+    const userPictureCard = document.getElementById('user-picture-card');
+
+    userEmail.textContent = userData.email;
+    userName.textContent = userData.name;
+    userPictureNav.src = userData.picture;
+    userPictureCard.src = userData.picture;
+  </script>
+</body>
+</html>
